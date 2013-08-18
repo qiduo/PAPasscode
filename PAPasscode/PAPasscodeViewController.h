@@ -41,17 +41,17 @@ typedef enum {
     UIImageView *snapshotImageView;
 }
 
-@property (strong) UIView *backgroundView;
-@property (readonly) PasscodeAction action;
-@property (weak) id<PAPasscodeViewControllerDelegate> delegate;
-@property (strong) NSString *alternativePasscode;
-@property (strong) NSString *passcode;
-@property (assign) BOOL simple;
-@property (assign) NSInteger failedAttempts;
-@property (strong) NSString *enterPrompt;
-@property (strong) NSString *confirmPrompt;
-@property (strong) NSString *changePrompt;
-@property (strong) NSString *message;
+@property (nonatomic, strong) UIView *backgroundView;
+@property (nonatomic, assign, readonly) PasscodeAction action;
+@property (nonatomic, weak) id<PAPasscodeViewControllerDelegate> delegate;
+@property (nonatomic, copy) NSString *alternativePasscode;
+@property (nonatomic, copy) NSString *passcode;
+@property (nonatomic, assign) BOOL simple;
+@property (nonatomic, assign) NSUInteger failedAttempts;
+@property (nonatomic, copy) NSString *enterPrompt;
+@property (nonatomic, copy) NSString *confirmPrompt;
+@property (nonatomic, copy) NSString *changePrompt;
+@property (nonatomic, copy) NSString *message;
 
 - (id)initForAction:(PasscodeAction)action;
 
