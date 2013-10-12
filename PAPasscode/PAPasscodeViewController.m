@@ -19,8 +19,8 @@
 #define MARKER_X        22
 #define MARKER_Y        18
 #define MESSAGE_HEIGHT  74
-#define FAILED_LCAP     19
-#define FAILED_RCAP     19
+#define FAILED_LCAP     9
+#define FAILED_RCAP     9
 #define FAILED_HEIGHT   26
 #define FAILED_MARGIN   10
 #define TEXTFIELD_MARGIN 8
@@ -89,18 +89,19 @@
         digitPanel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
         [contentView addSubview:digitPanel];
         
-        UIImage *backgroundImage = [UIImage imageNamed:@"papasscode_background"];
+        UIImage *backgroundImage = [[UIImage imageNamed:@"papasscode_background"] resizableImageWithCapInsets:UIEdgeInsetsMake(26, 6, 27, 6)];
         UIImage *markerImage = [UIImage imageNamed:@"papasscode_marker"];
         CGFloat xLeft = 0;
         for (int i=0;i<4;i++) {
-            UIImageView *backgroundImageView = [[UIImageView alloc] initWithImage:backgroundImage];
+            UIImageView *backgroundImageView = [[UIImageView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 62.0f, 54.0f)];
+            backgroundImageView.image = backgroundImage;
             backgroundImageView.frame = CGRectOffset(backgroundImageView.frame, xLeft, 0);
             [digitPanel addSubview:backgroundImageView];
             digitImageViews[i] = [[UIImageView alloc] initWithImage:markerImage];
             digitImageViews[i].autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
             digitImageViews[i].frame = CGRectOffset(digitImageViews[i].frame, backgroundImageView.frame.origin.x+MARKER_X, MARKER_Y);
             [digitPanel addSubview:digitImageViews[i]];
-            xLeft += DIGIT_SPACING + backgroundImage.size.width;
+            xLeft += DIGIT_SPACING + 62.0f;
         }
         passcodeTextField = [[UITextField alloc] initWithFrame:digitPanel.frame];
         passcodeTextField.hidden = YES;
