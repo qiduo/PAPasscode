@@ -21,7 +21,9 @@
 #define MESSAGE_HEIGHT  74
 #define FAILED_LCAP     9
 #define FAILED_RCAP     9
-#define FAILED_HEIGHT   26
+#define FAILED_TCAP     9
+#define FAILED_BCAP     9
+#define FAILED_HEIGHT   19
 #define FAILED_MARGIN   10
 #define TEXTFIELD_MARGIN 8
 #define SLIDE_DURATION  0.3
@@ -161,7 +163,7 @@
 	messageLabel.text = _message;
     [contentView addSubview:messageLabel];
         
-    UIImage *failedBg = [[UIImage imageNamed:@"papasscode_failed_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(0, FAILED_LCAP, 0, FAILED_RCAP)];
+    UIImage *failedBg = [[UIImage imageNamed:@"papasscode_failed_bg"] resizableImageWithCapInsets:UIEdgeInsetsMake(FAILED_TCAP, FAILED_LCAP, FAILED_BCAP, FAILED_RCAP)];
     failedImageView = [[UIImageView alloc] initWithImage:failedBg];
     failedImageView.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
     failedImageView.hidden = YES;
@@ -171,9 +173,7 @@
     failedAttemptsLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
     failedAttemptsLabel.backgroundColor = [UIColor clearColor];
     failedAttemptsLabel.textColor = [UIColor whiteColor];
-    failedAttemptsLabel.font = [UIFont boldSystemFontOfSize:15];
-    failedAttemptsLabel.shadowColor = [UIColor blackColor];
-    failedAttemptsLabel.shadowOffset = CGSizeMake(0, -1);
+    failedAttemptsLabel.font = [UIFont systemFontOfSize:12];
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 60000
     failedAttemptsLabel.textAlignment = UITextAlignmentCenter;
 #else
