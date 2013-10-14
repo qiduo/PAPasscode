@@ -35,7 +35,6 @@
 - (void)passcodeChanged:(id)sender;
 - (void)resetFailedAttempts;
 - (void)showFailedAttempts;
-- (void)showScreenForPhase:(NSInteger)phase animated:(BOOL)animated;
 @end
 
 @implementation PAPasscodeViewController

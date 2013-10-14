@@ -54,5 +54,6 @@ typedef enum {
 @property (nonatomic, copy) NSString *message;
 
 - (id)initForAction:(PasscodeAction)action;
+- (void)showScreenForPhase:(NSInteger)newPhase animated:(BOOL)animated;
 
 @end
