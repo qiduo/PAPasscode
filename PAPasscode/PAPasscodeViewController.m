@@ -23,7 +23,7 @@
 #define FAILED_RCAP     9
 #define FAILED_TCAP     9
 #define FAILED_BCAP     9
-#define FAILED_HEIGHT   19
+#define FAILED_HEIGHT   24
 #define FAILED_MARGIN   10
 #define TEXTFIELD_MARGIN 8
 #define SLIDE_DURATION  0.3
@@ -172,7 +172,7 @@
     failedAttemptsLabel.autoresizingMask = UIViewAutoresizingFlexibleLeftMargin|UIViewAutoresizingFlexibleRightMargin;
     failedAttemptsLabel.backgroundColor = [UIColor clearColor];
     failedAttemptsLabel.textColor = [UIColor whiteColor];
-    failedAttemptsLabel.font = [UIFont systemFontOfSize:12];
+    failedAttemptsLabel.font = [UIFont systemFontOfSize:15];
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 60000
     failedAttemptsLabel.textAlignment = UITextAlignmentCenter;
 #else
