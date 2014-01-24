@@ -136,8 +136,6 @@
     promptLabel.backgroundColor = [UIColor clearColor];
     promptLabel.textColor = [UIColor colorWithRed:0.30 green:0.34 blue:0.42 alpha:1.0];
     promptLabel.font = [UIFont boldSystemFontOfSize:17];
-    promptLabel.shadowColor = [UIColor whiteColor];
-    promptLabel.shadowOffset = CGSizeMake(0, 1);
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 60000
     promptLabel.textAlignment = UITextAlignmentCenter;
 #else
@@ -151,8 +149,6 @@
     messageLabel.backgroundColor = [UIColor clearColor];
     messageLabel.textColor = [UIColor colorWithRed:0.30 green:0.34 blue:0.42 alpha:1.0];
     messageLabel.font = [UIFont systemFontOfSize:14];
-    messageLabel.shadowColor = [UIColor whiteColor];
-    messageLabel.shadowOffset = CGSizeMake(0, 1);
 #if __IPHONE_OS_VERSION_MIN_REQUIRED < 60000
     messageLabel.textAlignment = UITextAlignmentCenter;
 #else
